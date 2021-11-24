@@ -20,6 +20,8 @@ interface Props {
   zoomDelta?: number
   zoomMax?: number
   zoomMin?: number
+  /** reset 1:1 ratio */
+  zoomResetValue?: number
 }
 
 const ContextProvider: React.FC<Props> = ({ children, ...props }) => {

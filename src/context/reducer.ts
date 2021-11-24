@@ -23,6 +23,10 @@ function reducer(state: IState, action: IAction): IState {
       return { ...state, imgScale: action.scale }
     }
 
+    case 'SET_RESET_SCALE': {
+      return { ...state, zoomResetScale: action.scale }
+    }
+
     case 'SET_ROTATE': {
       return { ...state, imgRotate: action.rotate }
     }

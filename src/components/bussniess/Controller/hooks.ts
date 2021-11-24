@@ -40,7 +40,14 @@ export function useIntoViewerShown() {
 }
 
 export function useScale() {
-  const { dispatch, imgScale, zoomMax, zoomMin, zoomDelta } = useStore()
+  const {
+    dispatch,
+    imgScale,
+    zoomMax,
+    zoomMin,
+    zoomDelta,
+    zoomResetScale
+  } = useStore()
   const zoomin = useCallback(() => {
     if (imgScale >= zoomMax / 100) return
     dispatch({ type: 'SET_SCALE', scale: imgScale + zoomDelta / 100 })
@@ -52,8 +59,8 @@ export function useScale() {
   }, [imgScale, zoomDelta, zoomMin])
 
   const zoomreset = useCallback(() => {
-    dispatch({ type: 'SET_SCALE', scale: 1 })
-  }, [])
+    dispatch({ type: 'SET_SCALE', scale: zoomResetScale || 1 })
+  }, [zoomResetScale])
 
   return { zoomin, zoomout, zoomreset }
 }

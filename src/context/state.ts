@@ -9,8 +9,10 @@ export interface IState {
   zoomDelta: number
   zoomMax: number
   zoomMin: number
-}
 
+  /** reset 1:1 ratio */
+  zoomResetScale?: number
+}
 
 export const initialState = (): IState => ({
   picturesList: [],
@@ -20,5 +22,6 @@ export const initialState = (): IState => ({
   imgRotate: 0,
   zoomDelta: 25,
   zoomMax: 500,
-  zoomMin: 25
+  zoomMin: 25,
+  zoomResetScale: 1
 })

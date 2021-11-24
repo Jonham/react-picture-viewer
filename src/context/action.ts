@@ -20,6 +20,11 @@ interface SET_SCALE {
   scale: number
 }
 
+interface SET_RESET_SCALE {
+  type: 'SET_RESET_SCALE'
+  scale: number
+}
+
 interface SET_ROTATE {
   type: 'SET_ROTATE'
   rotate: number
@@ -33,6 +38,7 @@ interface SET_PICTURE_ORDER {
 export type IAction =
   | SHOWN_LAYER
   | SET_SCALE
+  | SET_RESET_SCALE
   | SET_ROTATE
   | SET_PICTURE_ORDER
   | RESET_PROPS
